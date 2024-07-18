@@ -1,0 +1,62 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.setup.js",
+        "**/*.test*"
+      ],
+      "plugins": ["jest"],
+      "env": {
+        "jest/globals": true
+      },
+      "extends": ["plugin:jest/recommended"],
+      "rules": {
+        "global-require": "off"
+      }
+    },
+    {
+      "files": ["**/*.config*"],
+      "rules": {
+        "global-require": "off"
+      }
+    }
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "controlComponents": ["Input"],
+      "assert": "both",
+      "depth": 3
+    }],
+    "no-param-reassign": "off",
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "css": "always",
+        "jpg": "always",
+        "svg": "always",
+        "png": "always",
+        "slice": "always",
+        "actions": "always",
+        "selector": "always"
+      }
+    ]
+  }
+}
